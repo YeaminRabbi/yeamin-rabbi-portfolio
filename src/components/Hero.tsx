@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float animate-delay-500" />
 
-      <div className="relative z-10 container mx-auto px-6 py-20 mb-25">
+      <div className="relative z-10 container mx-auto px-6 py-20 mb-22">
         <div className="max-w-4xl mx-auto text-center">
           {/* Status badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 animate-fade-in">
