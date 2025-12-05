@@ -50,35 +50,9 @@ const Contact = () => {
         />
 
         <div className="max-w-2xl mx-auto">
-          {/* Contact cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-            {contactItems.map((item, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl glass-card text-center group opacity-0 animate-scale-in"
-                style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors duration-300">
-                  <item.icon className="w-5 h-5 text-primary" />
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">{item.label}</p>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    className="text-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
-                  >
-                    {item.value}
-                  </a>
-                ) : (
-                  <p className="text-foreground text-sm font-medium">{item.value}</p>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Social links & CTA */}
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-4 mb-8">
+        {/* Social links & CTA */}
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
