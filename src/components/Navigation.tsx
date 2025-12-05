@@ -48,7 +48,7 @@ const Navigation = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            YR<span className="text-foreground">.</span>
+            Yeamin Rabbi
           </a>
 
           {/* Desktop Navigation */}
