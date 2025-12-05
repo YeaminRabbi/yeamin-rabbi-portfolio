@@ -1,6 +1,14 @@
 import { profile } from "@/data/portfolio";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import TypingAnimation from "./TypingAnimation";
+
+const roles = [
+  "Software Engineer",
+  "Laravel Developer",
+  "Backend Engineer",
+  "PHP Developer",
+];
 
 const Hero = () => {
   return (
@@ -30,11 +38,10 @@ const Hero = () => {
             <span className="gradient-text">{profile.name.split(' ')[0]}</span>
           </h1>
 
-          {/* Title with typewriter effect */}
-          <div className="mb-8 animate-fade-in animate-delay-200">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground">
-              <span className="text-foreground">{profile.title}</span>
-              <span className="ml-1 inline-block w-0.5 h-8 bg-primary animate-blink" />
+          {/* Title with typing animation */}
+          <div className="mb-8 animate-fade-in animate-delay-200 h-12 md:h-14">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium">
+              <TypingAnimation words={roles} typingSpeed={80} deletingSpeed={40} pauseDuration={1500} />
             </h2>
           </div>
 
