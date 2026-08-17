@@ -1,11 +1,12 @@
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Sparkles } from "lucide-react";
 
 interface Project {
   id: number;
   title: string;
   tech: string;
   description: string;
+  featured?: boolean;
 }
 
 interface ProjectCardProps {
@@ -18,12 +19,21 @@ const ProjectCard = ({ project, onClick, index }: ProjectCardProps) => {
   return (
     <div
       onClick={onClick}
-      className="group relative p-6 rounded-2xl glass-card card-hover cursor-pointer border-gradient opacity-0 animate-fade-in-up"
+      className={`group relative p-6 rounded-2xl glass-card card-hover cursor-pointer border-gradient opacity-0 animate-fade-in-up ${
+        project.featured ? "ring-1 ring-primary/40 shadow-lg shadow-primary/10" : ""
+      }`}
       style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
     >
       {/* Hover glow effect */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
+
+      {project.featured && (
+        <div className="absolute -top-3 left-5 flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-xs font-semibold shadow-md">
+          <Sparkles className="w-3 h-3" />
+          Featured
+        </div>
+      )}
+
       <div className="relative z-10">
         {/* Project number */}
         <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-sm font-mono text-muted-foreground group-hover:text-primary group-hover:bg-primary/20 transition-all duration-300">
@@ -31,7 +41,7 @@ const ProjectCard = ({ project, onClick, index }: ProjectCardProps) => {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-primary transition-colors duration-300 pr-8">
+        <h3 className="text-xl font-semibold mb-2 mt-2 text-foreground group-hover:text-primary transition-colors duration-300 pr-8">
           {project.title}
         </h3>
 

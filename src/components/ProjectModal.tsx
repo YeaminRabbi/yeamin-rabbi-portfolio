@@ -30,7 +30,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl glass-card border-border bg-card/95 backdrop-blur-xl">
         <DialogHeader className="space-y-4">
-          <div className="flex items-start justify-between">
+          <div className="flex items-start justify-between pr-10">
             <div>
               <DialogTitle className="text-2xl font-bold text-foreground mb-2">
                 {project.title}
@@ -39,7 +39,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 {project.tech}
               </Badge>
             </div>
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold flex-shrink-0">
               {String(project.id).padStart(2, '0')}
             </div>
           </div>

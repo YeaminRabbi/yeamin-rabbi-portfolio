@@ -4,10 +4,10 @@ import { Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
 import TypingAnimation from "./TypingAnimation";
 
 const roles = [
-  "Software Engineer",
-  "Laravel Developer",
-  "Backend Engineer",
-  "PHP Developer",
+  "Full Stack Software Engineer",
+  "AI Automation Engineer",
+  "Laravel & NestJS Developer",
+  "SaaS Architect",
 ];
 
 const Hero = () => {

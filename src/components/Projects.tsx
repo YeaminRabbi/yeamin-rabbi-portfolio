@@ -8,6 +8,10 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const sortedProjects = [...projects].sort(
+    (a, b) => Number(!!b.featured) - Number(!!a.featured)
+  );
+
   const handleProjectClick = (project: typeof projects[0]) => {
     setSelectedProject(project);
     setIsModalOpen(true);
@@ -21,11 +25,11 @@ const Projects = () => {
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading
           title="Featured Projects"
-          subtitle="A selection of my recent work showcasing various technologies and solutions"
+          subtitle="Recent work in AI automation and SaaS, alongside a selection of past builds"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {sortedProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               project={project}
