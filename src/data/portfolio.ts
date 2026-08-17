@@ -66,6 +66,7 @@ export const projects = [
     ],
     featured: true,
   },
+  
   {
     id: 2,
     title: "AI Agent-Powered Agency Platform",
